@@ -37,8 +37,9 @@ namespace WpfTestTask2.Views
         private void InsertButton_Click(object sender, RoutedEventArgs e)
         {
             InsertWindow insertWindow = new InsertWindow();
-            insertWindow.ShowDialog();
             insertWindow.Closed += Window_Closed;
+            insertWindow.ShowDialog();
+            
         }
         /// <summary>
         /// Кнопка Update
@@ -48,8 +49,9 @@ namespace WpfTestTask2.Views
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateWindow updateWindow = new UpdateWindow();
-            updateWindow.ShowDialog();
             updateWindow.Closed += Window_Closed;
+            updateWindow.ShowDialog();
+            
         }
         /// <summary>
         /// Кнопка Delete
