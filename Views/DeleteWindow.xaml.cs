@@ -58,6 +58,19 @@ namespace WpfTestTask2.Views
             }
             
         }
-       
+        /// <summary>
+        /// Обработчик события нажатия на DataGrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Nomenclature obj = DeleteDataGrid.SelectedItem as Nomenclature;
+            if (obj != null)
+            {
+                TextBox.Text = obj.Id.ToString();
+                
+            }
+        }
     }
 }

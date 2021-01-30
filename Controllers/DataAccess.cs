@@ -69,7 +69,7 @@ namespace WpfTestTask2
         /// <param name="price">Цена номенклатуры.</param>
         /// <param name="fromDate">Начальная дата.</param>
         /// <param name="toDate">Конечная дата.</param>
-        public void InsertNomenclature(int id, string name, int price, DateTime fromDate, DateTime toDate)
+        public void InsertNomenclature(int id, string name, double price, DateTime fromDate, DateTime toDate)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DbConnection")))
             {
@@ -84,7 +84,7 @@ namespace WpfTestTask2
         /// <param name="price">Цена номенклатуры.</param>
         /// <param name="fromDate">Начальная дата.</param>
         /// <param name="toDate">Конечная дата.</param>
-        public void UpdateNomenclature(int id, string name, int price, DateTime fromDate, DateTime toDate)
+        public void UpdateNomenclature(int id, string name, double price, DateTime fromDate, DateTime toDate)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DbConnection")))
             {
@@ -99,7 +99,7 @@ namespace WpfTestTask2
         /// <param name="price">Цена номенклатуры.</param>
         /// <param name="fromDate">Начальная дата.</param>
         /// <param name="toDate">Конечная дата.</param>
-        public void DeleteNomenclature(int id, string name = default, int price=default, DateTime fromDate=default, DateTime toDate = default)
+        public void DeleteNomenclature(int id, string name = default, double price =default, DateTime fromDate=default, DateTime toDate = default)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DbConnection")))
             {

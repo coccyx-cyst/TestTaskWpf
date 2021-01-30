@@ -19,7 +19,7 @@ namespace WpfTestTask2.Views
     /// </summary>
     public partial class UpdateWindow : Window
     {
-        List<Nomenclature> nomenclatures = new List<Nomenclature>();   
+        List<Nomenclature> nomenclatures = new List<Nomenclature>();
         public UpdateWindow()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace WpfTestTask2.Views
                 DataAccess db = new DataAccess();
                 db.UpdateNomenclature(int.Parse(IdTextBox.Text),
                                       NameTextBox.Text,
-                                      int.Parse(PriceTextBox.Text),
+                                      double.Parse(PriceTextBox.Text),
                                       DateTime.Parse(FromDateTextBox.Text),
                                       DateTime.Parse(ToDateTextBox.Text));
             }
@@ -44,9 +44,27 @@ namespace WpfTestTask2.Views
 
                 MessageBox.Show($"{et.Message}", "Ошибка");
             }
-            
+
             DialogResult = true;
 
         }
+        /// <summary>
+        /// Обработчик события нажатия на Ячейку DataGrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UpdateGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Nomenclature obj = UpdateGrid.SelectedItem as Nomenclature;
+            if (obj != null)
+            {
+                IdTextBox.Text = obj.Id.ToString();
+                NameTextBox.Text = obj.Name;
+                PriceTextBox.Text = obj.Price.ToString();
+                ToDateTextBox.Text = obj.ToDate.ToString();
+                FromDateTextBox.Text = obj.FromDate.ToString();
+            }
+        }
+
     }
 }
