@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfTestTask2.Views.LoginForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTestTask2.Views"
+        mc:Ignorable="d"
+        Title="LoginForm" Height="382.051" Width="553.846" FontSize="20">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="0 0 0 20"
+                   HorizontalAlignment="Center" FontSize="66" FontFamily="Segoe UI Light">
+             Авторизация
+        </TextBlock>
+        <!--Username row-->
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="0 0 0 10">
+            Имя пользователя:
+        </TextBlock>
+        <TextBox x:Name="userName" Grid.Row="1" Grid.Column="2" MinWidth="150" 
+                 Margin="0 0 0 10"/>
+        <!--Password row-->
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="0 0 0 10">
+            Пароль:
+        </TextBlock>
+        <PasswordBox x:Name="passwordValue" Grid.Row="2" Grid.Column="2" MinWidth="150" 
+                 Margin="0 0 0 10"/>
+
+        <!--Login row-->
+        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Padding="20 5"
+                HorizontalAlignment="Center" x:Name="loginButton" Click="loginButton_Click">
+            Войти
+        </Button>
+    </Grid>
+</Window>

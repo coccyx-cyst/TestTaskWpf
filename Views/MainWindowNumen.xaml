@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfTestTask2.Views.MainWindowNumen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTestTask2.Views"
+         mc:Ignorable="d" FontSize="18"
+        Title="Nomenclature" Height="433.333" Width="650">
+    <DockPanel>
+        <Menu
+            DockPanel.Dock="Top">
+            <MenuItem x:Name="InsertButton" Header="_Insert" FontSize="18" Click="InsertButton_Click">
+
+            </MenuItem>
+            <MenuItem x:Name="UpdateButton" Header="_Update" FontSize="18" Click="UpdateButton_Click">
+
+            </MenuItem>
+            <MenuItem x:Name="DeleteButton" Header="_Delete" FontSize="18" Click="DeleteButton_Click"/>
+
+        </Menu>
+        <Grid>
+            <ContentControl x:Name="ActiveItem" Margin="5">
+                <DataGrid x:Name="NomenDataGrid" HorizontalAlignment="Left" Height="346" Margin="10,10,0,0" VerticalAlignment="Top" Width="612"/>
+            </ContentControl>
+        </Grid>
+    </DockPanel>
+</Window>
