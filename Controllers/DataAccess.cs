@@ -13,6 +13,7 @@ namespace WpfTestTask2
     /// </summary>
     public class DataAccess
     {
+        private readonly string _connectionString = Helper.CnnVal("DbConnection");
         /// <summary>
         /// Проверка логина
         /// </summary>
@@ -21,17 +22,12 @@ namespace WpfTestTask2
         /// <returns>Булево значение</returns>
         public bool Login(string loginName, string password)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DbConnection")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(_connectionString))
             {
                
                var loginRes = connection.ExecuteScalar($"select dbo.check_authentication('{loginName}','{password}')").ToString();
-               
-                if (loginRes == "1")
-                {
-                    return true;
-                }
-                
-                return false;
+
+                return Convert.ToBoolean(loginRes);
 
                 
             }
@@ -42,7 +38,7 @@ namespace WpfTestTask2
         /// <returns>Лист типа User</returns>
         public List<User> SelectUsers()
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DbConnection")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(_connectionString))
             {
                 var loginResult = connection.Query<User>($"select * from dbo.sel_users()").ToList();
 
@@ -55,7 +51,7 @@ namespace WpfTestTask2
         /// <returns></returns>
         public List<Nomenclature> SelNomenclatures()
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DbConnection")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(_connectionString))
             {
                 var nomenclatures = connection.Query<Nomenclature>($"select * from dbo.sel_nomenclature()").ToList();
                 return nomenclatures;
@@ -71,7 +67,7 @@ namespace WpfTestTask2
         /// <param name="toDate">Конечная дата.</param>
         public void InsertNomenclature(int id, string name, double price, DateTime fromDate, DateTime toDate)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DbConnection")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(_connectionString))
             {
                 connection.Execute($"exec dbo.iud_nomenclature 'I', {id}, '{name}', {price}, '{fromDate}', '{toDate}'");
             }
@@ -86,7 +82,7 @@ namespace WpfTestTask2
         /// <param name="toDate">Конечная дата.</param>
         public void UpdateNomenclature(int id, string name, double price, DateTime fromDate, DateTime toDate)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DbConnection")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(_connectionString))
             {
                 connection.Execute($"exec dbo.iud_nomenclature 'U', {id}, '{name}', {price}, '{fromDate}', '{toDate}'");
             }
@@ -101,7 +97,7 @@ namespace WpfTestTask2
         /// <param name="toDate">Конечная дата.</param>
         public void DeleteNomenclature(int id, string name = default, double price =default, DateTime fromDate=default, DateTime toDate = default)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DbConnection")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(_connectionString))
             {
                 connection.Execute($"exec dbo.iud_nomenclature 'D', {id}, '{name}', {price}, '{fromDate}', '{toDate}'");
             }
