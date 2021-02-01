@@ -20,6 +20,7 @@ namespace WpfTestTask2.Views
     public partial class UpdateWindow : Window
     {
         List<Nomenclature> nomenclatures = new List<Nomenclature>();
+        public static int IdUpdated { get; set; }
         public UpdateWindow()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace WpfTestTask2.Views
             try
             {
                 DataAccess db = new DataAccess();
-                db.UpdateNomenclature(int.Parse(IdTextBox.Text),
+                db.UpdateNomenclature(IdUpdated,
                                       NameTextBox.Text,
                                       Convert.ToDouble(PriceTextBox.Text),
                                       DateTime.Parse(FromDateTextBox.Text),
@@ -58,7 +59,7 @@ namespace WpfTestTask2.Views
             Nomenclature obj = UpdateGrid.SelectedItem as Nomenclature;
             if (obj != null)
             {
-                IdTextBox.Text = obj.Id.ToString();
+                IdUpdated = obj.Id;
                 NameTextBox.Text = obj.Name;
                 PriceTextBox.Text = obj.Price.ToString();
                 ToDateTextBox.Text = obj.ToDate.ToString();

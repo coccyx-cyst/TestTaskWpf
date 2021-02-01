@@ -7,17 +7,15 @@
         mc:Ignorable="d"
         Title="InsertWindow" Height="367" Width="440" FontSize="18">
     <Grid>
-        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Height="43" Margin="3,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.597,-1.326"/>
-        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="43" Margin="3,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.597,-1.326"/>
-        <TextBox x:Name="PriceTextBox" HorizontalAlignment="Left" Height="43" Margin="3,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.597,-1.326"/>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="235,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.159,-0.482"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="235,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.159,-0.482"/>
-        <Label Content="Price" HorizontalAlignment="Left" Margin="235,117,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.159,-0.482"/>
-        <Label Content="FromDate" HorizontalAlignment="Left" Margin="235,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.159,-0.482"/>
-        <Label Content="ToDate" HorizontalAlignment="Left" Margin="235,218,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.159,-0.482"/>
+        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="43" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.597,-1.326"/>
+        <TextBox x:Name="PriceTextBox" HorizontalAlignment="Left" Height="43" Margin="10,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.597,-1.326"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="242,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.159,-0.482"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="242,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.159,-0.482"/>
+        <Label Content="FromDate" HorizontalAlignment="Left" Margin="242,148,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.159,-0.482"/>
+        <Label Content="ToDate" HorizontalAlignment="Left" Margin="242,192,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.159,-0.482"/>
         <Button x:Name="SaveButton" Content="Сохранить" HorizontalAlignment="Left" Margin="162,268,0,0" VerticalAlignment="Top" Width="130" Height="58" Click="SaveButton_Click"/>
-        <DatePicker x:Name="ToDateTextBox" HorizontalAlignment="Left" Margin="3,219,0,0" VerticalAlignment="Top" Width="218" Height="33"/>
-        <DatePicker x:Name="FromDateTextBox" HorizontalAlignment="Left" Margin="3,176,0,0" VerticalAlignment="Top" Width="218"/>
+        <DatePicker x:Name="ToDateTextBox" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top" Width="218" Height="33"/>
+        <DatePicker x:Name="FromDateTextBox" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Width="218"/>
 
     </Grid>
 </Window>

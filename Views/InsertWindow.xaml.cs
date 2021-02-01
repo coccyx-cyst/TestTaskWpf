@@ -38,11 +38,11 @@ namespace WpfTestTask2.Views
 
             try
             {
-                db.InsertNomenclature(int.Parse(IdTextBox.Text),
-                                  NameTextBox.Text,
-                                  double.Parse(PriceTextBox.Text),
-                                  DateTime.Parse(FromDateTextBox.Text),
-                                  DateTime.Parse(ToDateTextBox.Text));
+                db.InsertNomenclature(default,
+                                      NameTextBox.Text,
+                                      double.Parse(PriceTextBox.Text),
+                                      DateTime.Parse(FromDateTextBox.Text),
+                                      DateTime.Parse(ToDateTextBox.Text));
             }
             catch (Exception et)
             {

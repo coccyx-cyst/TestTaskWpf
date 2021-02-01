@@ -19,15 +19,22 @@ namespace WpfTestTask2.Views
     /// </summary>
     public partial class DeleteWindow : Window
     {
+        /// <summary>
+        /// Лист для хранения списка номенклатуры.
+        /// </summary>
         List<Nomenclature> nomenclatures = new List<Nomenclature>();
-
+        /// <summary>
+        /// Статик поле для хранения выбранного Id для передачи в SQL-запрос
+        /// </summary>
+        public static int IdDeleted { get; set; }
         public DeleteWindow()
         {
             InitializeComponent();
             DataAccess db = new DataAccess();
             nomenclatures = db.SelNomenclatures();
             DeleteDataGrid.ItemsSource = nomenclatures;
-        }
+            
+    }
         /// <summary>
         /// Логика для кнопки удаления
         /// </summary>
@@ -46,7 +53,7 @@ namespace WpfTestTask2.Views
             switch (msgBoxRes)//Switch для удобной работы с Enum
             {
                 case MessageBoxResult.Yes:
-                    db.DeleteNomenclature(int.Parse(TextBox.Text));
+                    db.DeleteNomenclature(IdDeleted);
                     DialogResult = true;
                     break;
                 case MessageBoxResult.No:
@@ -68,7 +75,7 @@ namespace WpfTestTask2.Views
             Nomenclature obj = DeleteDataGrid.SelectedItem as Nomenclature;
             if (obj != null)
             {
-                TextBox.Text = obj.Id.ToString();
+                IdDeleted = obj.Id;
                 
             }
         }

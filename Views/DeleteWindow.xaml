@@ -8,8 +8,6 @@
         Title="DeleteWindow" Height="475.641" Width="853.846" FontSize="18">
     <Grid>
         <DataGrid x:Name="DeleteDataGrid" HorizontalAlignment="Left" Height="425" Margin="10,10,0,0" VerticalAlignment="Top" Width="678" SelectionChanged="DeleteDataGrid_SelectionChanged"/>
-        <TextBox x:Name="TextBox" HorizontalAlignment="Left" Height="23" Margin="693,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Id" HorizontalAlignment="Left" Margin="813,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.811,0.478"/>
         <Button x:Name="DeleteButton" Content="Удалить" HorizontalAlignment="Left" Margin="718,150,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="DeleteButton_Click"/>
 
     </Grid>
