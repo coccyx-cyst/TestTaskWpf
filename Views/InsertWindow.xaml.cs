@@ -40,7 +40,7 @@ namespace WpfTestTask2.Views
             {
                 db.InsertNomenclature(int.Parse(IdTextBox.Text),
                                   NameTextBox.Text,
-                                  int.Parse(PriceTextBox.Text),
+                                  double.Parse(PriceTextBox.Text),
                                   DateTime.Parse(FromDateTextBox.Text),
                                   DateTime.Parse(ToDateTextBox.Text));
             }

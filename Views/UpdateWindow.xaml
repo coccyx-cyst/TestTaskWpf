@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="UpdateWindow" Height="450" Width="925.641" FontSize="18">
     <Grid>
-        <DataGrid x:Name="UpdateGrid" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="679"/>
+        <DataGrid x:Name="UpdateGrid" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="679" SelectionChanged="UpdateGrid_SelectionChanged"/>
         <Button x:Name="UpdateButton" Content="Сохранить" HorizontalAlignment="Left" Margin="713,360,0,0" VerticalAlignment="Top" Width="107" Height="49" Click="Button_Click" RenderTransformOrigin="0.139,-2.43"/>
         <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="23" Margin="700,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Height="23" Margin="700,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>

@@ -35,7 +35,7 @@ namespace WpfTestTask2.Views
                 DataAccess db = new DataAccess();
                 db.UpdateNomenclature(int.Parse(IdTextBox.Text),
                                       NameTextBox.Text,
-                                      double.Parse(PriceTextBox.Text),
+                                      Convert.ToDouble(PriceTextBox.Text),
                                       DateTime.Parse(FromDateTextBox.Text),
                                       DateTime.Parse(ToDateTextBox.Text));
             }
